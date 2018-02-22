@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+import * as util from '../lib/util';
 
 
 export const tokenSet = token => ({
@@ -12,11 +13,11 @@ export const tokenDelete = () => {
 
 export const login = user => dispatch => {
   let {userName, passWord} = user;
-  return superagent.get(`${__API_URL__}/api/login`)
+  return superagent.get(`${__API_URL__}/api/user`)
   .auth(userName, passWord)
   .then(res => {
     util.createCookie('ccApp-token', res.text, 1);
-    dispatch(tokenSet(JSON.parse(res.text)));
+    dispatch(tokenSet(res.text));
     return res;
   })
 }
@@ -24,11 +25,16 @@ export const login = user => dispatch => {
 
 
 export const signup = user => dispatch => {
-  return superagent.post(`${__API_URL__}/api/signup`)
+  return superagent.post(`${__API_URL__}/api/user`)
   .send(user)
   .then(res => {
     util.createCookie('ccApp-token', res.text, 1);
-    dispatch(tokenSet(JSON.parse(res.text)));
+    dispatch(tokenSet(res.text));
     return res;
   })
 };
+
+export const checkUser = () => dispatch => {
+  return superagent.get(`${__API_URL__}/api/userCheck`)
+  .then(res => res.body);
+}

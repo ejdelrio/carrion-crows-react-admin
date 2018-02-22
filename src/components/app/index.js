@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthPage from '../authPage';
 
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
     return(
       <section>
 
-        <h1>Hello World</h1>
+        <AuthPage />
       </section>
     );
   }
