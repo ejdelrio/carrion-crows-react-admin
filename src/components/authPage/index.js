@@ -20,7 +20,6 @@ class AuthPage extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     let sumbitAction = this.state.adminExists ?
     this.props.login :
     this.props.signup;
@@ -30,7 +29,8 @@ class AuthPage extends React.Component {
     'Sign Up';
 
     return(
-      <section>
+      <section id={'auth-page'}>
+        <img src={'https://s3-us-west-2.amazonaws.com/carrion-crows/header.png'}/>
         <AuthForm 
           submission={sumbitAction}
           buttonText={buttonText}

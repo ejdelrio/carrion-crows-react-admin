@@ -1,0 +1,43 @@
+@import '../../style/lib/var.scss';
+
+#auth-page {
+  float: left;
+  width: 100vw;
+  height: 100vh;
+  background: #131212;
+  img {
+    float: left;
+    width: 60vw;
+    height: 20vh;
+    margin: 2vh 20vw;
+  }
+  form {
+    float: left;
+    width: 30vw;
+    height: 30vh;
+    margin: 10vh 35vw;
+    border: 2px;
+    background: #3a3838;
+    &>* {
+      float: left;
+    }
+  }
+
+  form > input {
+    
+    width: 50%;
+    height: 4vh;
+    margin: 2vh 20%;
+    padding: 1vh 5%;
+    border: none;
+    border-radius: 2px;
+    
+  }
+  form > button {
+    width: 40%;
+    height: 5vh;
+    border-radius: 2px;
+    border: none;
+    margin: 2vh 30%;
+  }
+}
