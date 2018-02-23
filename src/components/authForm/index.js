@@ -26,10 +26,6 @@ class AuthForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.submission(this.state)
-    .then(() => this.setState({
-      userName: '',
-      passWord: ''
-    }))
     .catch(err => console.error(err));
   }
 
@@ -45,7 +41,7 @@ class AuthForm extends React.Component {
       ></input>
     )
     return(
-      <form id='auth-form' onSubmit={this.onSubmit}>
+      <form id='auth-form' onSubmit={this.onSubmit} className={this.props.formClass}>
         <input
           name={'userName'}
           type={'text'}

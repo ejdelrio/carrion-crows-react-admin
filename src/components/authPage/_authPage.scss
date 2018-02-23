@@ -1,4 +1,5 @@
 @import '../../style/lib/var.scss';
+@import '../../style/lib/animations.scss';
 
 #auth-page {
   float: left;
@@ -31,6 +32,13 @@
     padding: 1vh 5%;
     border: none;
     border-radius: 2px;
+    transition: 350ms all;
+    outline: none;
+    font-size: 2vh;
+    &:focus {
+      background: black;
+      color: white;
+    }
     
   }
   form > button {
@@ -39,5 +47,14 @@
     border-radius: 2px;
     border: none;
     margin: 2vh 30%;
+    transition: 350ms all;
+    font-size: 2vh;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+  .login {
+    height: 40vh;
   }
 }

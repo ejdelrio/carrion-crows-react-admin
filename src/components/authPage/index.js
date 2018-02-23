@@ -15,6 +15,7 @@ class AuthPage extends React.Component {
   }
 
   componentWillMount() {
+    if(this.props.token) return;
     this.props.checkUser()
     .then(val => this.setState({adminExists: val}));
   }
@@ -28,12 +29,20 @@ class AuthPage extends React.Component {
     'Login':
     'Sign Up';
 
+    let formClass = this.state.adminExists ?
+    'slideUp' :
+    'slideUp login';
+
     return(
       <section id={'auth-page'}>
-        <img src={'https://s3-us-west-2.amazonaws.com/carrion-crows/header.png'}/>
+        <img 
+          src={'https://s3-us-west-2.amazonaws.com/carrion-crows/header.png'}
+          className='slideDown'
+        />
         <AuthForm 
           submission={sumbitAction}
           buttonText={buttonText}
+          formClass={formClass}
         />
       </section>
     )
@@ -41,9 +50,6 @@ class AuthPage extends React.Component {
 
 }
 
-let mapStateToProps = state => ({
-  token: state.token
-})
 
 let mapDispatchToProps = dispatch => ({
   login: user => dispatch(authAction.login(user)),
@@ -51,4 +57,4 @@ let mapDispatchToProps = dispatch => ({
   checkUser: () => dispatch(authAction.checkUser())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthPage);
+export default connect(undefined, mapDispatchToProps)(AuthPage);
