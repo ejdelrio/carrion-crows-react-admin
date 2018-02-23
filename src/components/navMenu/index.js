@@ -1,4 +1,5 @@
 import React from 'react';
+import './_navMenu.scss';
 
 class NavMenu extends React.Component {
   constructor(props) {
@@ -8,12 +9,16 @@ class NavMenu extends React.Component {
 
   render() {
     return(
-      <section>
+      <section id='nav-menu' className={this.props.menuClass}>
+        <div onClick={this.props.closeMenu}>X</div>
         <ul>
           <li>Home</li>
           <li>Band Members</li>
+          <li>Albums</li>
         </ul>
       </section>
     )
   }
 }
+
+export default NavMenu;
