@@ -2,6 +2,7 @@ import React from 'react';
 import './_dashboard.scss';
 
 import NavMenu from '../navMenu';
+import BandPage from '../bandPage';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Dashboard extends React.Component {
           menuClass={this.state.menuClass}
           closeMenu={this.toggleMenu}
         />
+        <BandPage />
       </section>
     )
   }
