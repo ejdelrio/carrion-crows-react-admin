@@ -3,4 +3,55 @@
   width: 100vw;
   height: 95vh;
   background: rgb(68, 65, 65);
+
+  &>form {
+    width: 35vw;
+    height: 75vh;
+    background: blue;
+    border-radius: 3px;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    float: left;
+
+    input, textarea {
+      float: left;
+      width: 70%;
+      height: 3vh;
+      padding: 1vh 5%;
+      border: none;
+      border-radius: 3px;
+      margin: 3vh 10%;
+      outline: none;
+      transition: 350ms all;
+      font-size: 2vh;
+
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+    textarea{
+      height: 20vh;
+      resize: none;
+    }
+
+    ul {
+      float: left;
+      width: 70%;
+      height: 8vh;
+      padding: 1vh 5%;
+      border-radius: 3px;
+      margin: 0 10%;
+    }
+    button {
+      float: right;
+      width: 25%;
+      height: 5vh;
+      padding: 1vh 0%;
+      border: none;
+      border-radius: 2px;
+      margin-right: 10%;
+      outline: none;
+    }
+  }
 }
